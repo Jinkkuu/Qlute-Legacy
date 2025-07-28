@@ -26,4 +26,8 @@ func _exit():
 
 
 func _play():
-	get_tree().change_scene("res://Panels/SongSelect.tscn")
+	get_tree().change_scene("res://Panels/Main/SongSelect.tscn")
+
+
+func _browse():
+	get_tree().change_scene("res://Panels/Main/Browse.tscn")

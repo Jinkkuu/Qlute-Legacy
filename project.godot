@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Qlute"
-run/main_scene="res://Panels/Bootstrap.tscn"
+run/main_scene="res://Panels/Main/Bootstrap.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Qlute"
 boot_splash/show_image=false

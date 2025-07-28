@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://test.jpeg" type="Texture" id=1]
-[ext_resource path="res://Panels/TopPanel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Panels/Overlay/TopPanel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Script/HomeScreen.gd" type="Script" id=3]
-[ext_resource path="res://Panels/ButtonHome.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Panels/Overlay/ButtonHome.tscn" type="PackedScene" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
@@ -74,4 +74,5 @@ text = "Exit"
 [node name="Tween" type="Tween" parent="."]
 
 [connection signal="pressed" from="StartMenu/Boxes/Play" to="." method="_play"]
+[connection signal="pressed" from="StartMenu/Boxes/Browse" to="." method="_browse"]
 [connection signal="pressed" from="StartMenu/Boxes/Exit" to="." method="_exit"]

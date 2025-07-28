@@ -1,0 +1,342 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://Fonts/default.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://test.jpeg" type="Texture" id=2]
+[ext_resource path="res://Script/Browse.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color( 0.164706, 0.156863, 0.372549, 1 )
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0.6, 0.6, 0.6, 0.784314 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=19]
+content_margin_left = 2.0
+content_margin_right = 2.0
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+bg_color = Color( 1, 1, 1, 0.156863 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=2]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color( 0.0862745, 0.0784314, 0.294118, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.243137, 0.235294, 0.45098, 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 48
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=11]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+
+[sub_resource type="DynamicFont" id=20]
+size = 12
+extra_spacing_top = 2
+extra_spacing_bottom = -2
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0, 0, 0, 0.0784314 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="DynamicFont" id=13]
+size = 12
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.4, 0.392157, 0.686275, 1 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.4, 0.352941, 0.568627, 1 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.321569, 0.313726, 0.529412, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.243137, 0.235294, 0.45098, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 1, 1, 1, 0.235294 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0, 0, 0, 0.156863 )
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 1, 1, 1, 0.156863 )
+
+[node name="Browse" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="Results" type="PanelContainer" parent="."]
+anchor_left = 0.4
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 80.0
+margin_top = 120.0
+margin_bottom = -50.0
+rect_min_size = Vector2( 400, 50 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="V" type="VBoxContainer" parent="Results"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 390.0
+margin_bottom = 420.0
+custom_constants/separation = 8
+
+[node name="PreviewBackground" type="TextureRect" parent="Results/V"]
+margin_right = 380.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 150, 180 )
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 7
+
+[node name="RankStatus" type="PanelContainer" parent="Results/V/PreviewBackground"]
+margin_left = 10.0
+margin_top = 130.0
+margin_right = 110.0
+margin_bottom = 171.0
+rect_min_size = Vector2( 100, 41 )
+custom_styles/panel = SubResource( 18 )
+
+[node name="Label" type="Label" parent="Results/V/PreviewBackground/RankStatus"]
+margin_top = 11.0
+margin_right = 100.0
+margin_bottom = 30.0
+text = "N/A"
+align = 1
+valign = 1
+
+[node name="InfoBox" type="PanelContainer" parent="Results/V"]
+margin_top = 188.0
+margin_right = 380.0
+margin_bottom = 211.0
+custom_styles/panel = SubResource( 19 )
+
+[node name="Columns" type="HBoxContainer" parent="Results/V/InfoBox"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 378.0
+margin_bottom = 21.0
+
+[node name="pp" type="Label" parent="Results/V/InfoBox/Columns"]
+margin_right = 122.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "39pp"
+align = 1
+
+[node name="BPM" type="Label" parent="Results/V/InfoBox/Columns"]
+margin_left = 126.0
+margin_right = 249.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "BPM: 180"
+align = 1
+
+[node name="Length" type="Label" parent="Results/V/InfoBox/Columns"]
+margin_left = 253.0
+margin_right = 376.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "00:43"
+align = 1
+
+[node name="Title" type="Label" parent="Results/V"]
+margin_top = 219.0
+margin_right = 380.0
+margin_bottom = 238.0
+text = "176 - ikazuchi_B"
+
+[node name="Artist" type="Label" parent="Results/V"]
+margin_top = 246.0
+margin_right = 380.0
+margin_bottom = 265.0
+text = "saradisk"
+
+[node name="Mapper" type="Label" parent="Results/V"]
+margin_top = 273.0
+margin_right = 380.0
+margin_bottom = 292.0
+text = "YuEast 2018"
+
+[node name="Songs" type="PanelContainer" parent="."]
+anchor_right = 0.4
+anchor_bottom = 1.0
+margin_top = 120.0
+margin_right = 80.0
+margin_bottom = -50.0
+rect_min_size = Vector2( 400, 50 )
+custom_styles/panel = SubResource( 2 )
+
+[node name="Entries" type="ScrollContainer" parent="Songs"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 390.0
+margin_bottom = 420.0
+
+[node name="Boxes" type="VBoxContainer" parent="Songs/Entries"]
+
+[node name="TitleBar" type="PanelContainer" parent="."]
+anchor_right = 1.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 50 )
+custom_styles/panel = SubResource( 10 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TitleBar"]
+margin_right = 800.0
+margin_bottom = 119.0
+
+[node name="Title" type="Label" parent="TitleBar/VBoxContainer"]
+margin_right = 800.0
+margin_bottom = 75.0
+custom_fonts/font = SubResource( 4 )
+custom_styles/normal = SubResource( 11 )
+text = "Browse"
+
+[node name="V" type="VBoxContainer" parent="TitleBar/VBoxContainer"]
+margin_top = 79.0
+margin_right = 800.0
+margin_bottom = 119.0
+custom_constants/separation = 0
+
+[node name="SearchBox" type="HBoxContainer" parent="TitleBar/VBoxContainer/V"]
+margin_right = 800.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 20 )
+custom_constants/separation = 0
+
+[node name="LineEdit" type="LineEdit" parent="TitleBar/VBoxContainer/V/SearchBox"]
+margin_right = 300.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 300, 0 )
+custom_fonts/font = SubResource( 20 )
+custom_styles/normal = SubResource( 12 )
+align = 1
+
+[node name="Button" type="Button" parent="TitleBar/VBoxContainer/V/SearchBox"]
+margin_left = 300.0
+margin_right = 400.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 100, 0 )
+custom_fonts/font = SubResource( 13 )
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/focus = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
+text = "Search"
+
+[node name="SearchBox2" type="HBoxContainer" parent="TitleBar/VBoxContainer/V"]
+margin_top = 20.0
+margin_right = 800.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 20 )
+custom_constants/separation = 0
+
+[node name="Button" type="Button" parent="TitleBar/VBoxContainer/V/SearchBox2"]
+margin_right = 100.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 100, 0 )
+custom_fonts/font = SubResource( 13 )
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/focus = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
+text = "Refresh"
+
+[node name="Button2" type="Button" parent="TitleBar/VBoxContainer/V/SearchBox2"]
+margin_left = 100.0
+margin_right = 200.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 100, 0 )
+custom_fonts/font = SubResource( 13 )
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/focus = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
+text = "Ranked"
+
+[node name="Button4" type="Button" parent="TitleBar/VBoxContainer/V/SearchBox2"]
+margin_left = 200.0
+margin_right = 300.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 100, 0 )
+custom_fonts/font = SubResource( 13 )
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/focus = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
+text = "Unranked"
+
+[node name="Button3" type="Button" parent="TitleBar/VBoxContainer/V/SearchBox2"]
+margin_left = 300.0
+margin_right = 400.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 100, 0 )
+custom_fonts/font = SubResource( 13 )
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/focus = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
+text = "Special"
+
+[node name="BottomBar" type="PanelContainer" parent="."]
+anchor_right = 1.0
+margin_top = 550.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 0, 50 )
+custom_styles/panel = SubResource( 5 )
+
+[node name="Back" type="Button" parent="BottomBar"]
+margin_right = 100.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_horizontal = 0
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
+text = "Back"
+
+[node name="Next" type="Button" parent="BottomBar"]
+margin_left = 700.0
+margin_right = 800.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_horizontal = 8
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
+text = "Download"
+
+[connection signal="pressed" from="BottomBar/Back" to="." method="_back"]
